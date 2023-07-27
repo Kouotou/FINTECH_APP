@@ -1,0 +1,5 @@
+>>>flutter create --org xxx.websitename domain app name
+
+to install adb (Android Debuger Bridge)
+>>> brew install --cast android-platform-tools
+
