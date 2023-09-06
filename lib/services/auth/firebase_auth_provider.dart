@@ -1,5 +1,7 @@
 //this is where we will abstarct firebase into our provider
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:learnflutter/firebase_options.dart';
 import 'package:learnflutter/services/auth/auth_exceptions.dart';
 import 'package:learnflutter/services/auth/auth_user.dart';
 import 'package:learnflutter/services/auth/auth_provider.dart';
@@ -96,5 +98,12 @@ class FirebaseAuthProvider implements AuthProvider {
     } else {
       throw UserNotFoundAuthException();
     }
+  }
+
+  @override
+  Future<void> initialize() async {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   }
 }
