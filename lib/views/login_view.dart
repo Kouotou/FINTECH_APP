@@ -80,6 +80,7 @@ class _HomePageState extends State<LoginView> {
 
               TextFieldInput(
                 hintText: 'Enter your password',
+                isPassword: true,
                 textInputType: TextInputType.text,
                 textEditingController: _password,
                 isEnableSuggestions: false,

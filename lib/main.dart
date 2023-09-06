@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/constants/routes.dart';
 import 'package:learnflutter/views/login_view.dart';
 import 'package:learnflutter/views/register_view.dart';
-import 'package:learnflutter/views/verify_email.%20view.dart';
+import 'package:learnflutter/views/verify_email_view.dart';
 import 'dart:developer' as devtools show log;
 
 import 'firebase_options.dart';
