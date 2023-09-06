@@ -16,8 +16,8 @@ abstract class AuthProvider {
   });
 
   //funtion to logOut a user
-  Future<AuthUser> logOut();
+  Future<void> logOut();
 
   //funtion to sendEmailVerification tp a user
-  Future<AuthUser> sendEmailVerification();
+  Future<void> sendEmailVerification();
 }
