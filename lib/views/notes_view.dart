@@ -8,6 +8,8 @@ import '../enums/menu_action.dart';
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
 
+  final nav = 0;
+
   @override
   State<NotesView> createState() => _NotesViewState();
 }
@@ -17,7 +19,6 @@ class _NotesViewState extends State<NotesView> {
   // that are configured for Material 3 at the place of
   // popupMenuButton.
   // MenuAction? selectedMenu;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,30 +62,30 @@ class _NotesViewState extends State<NotesView> {
       ),
     );
   }
-}
 
-Future<bool> showLogOutDialog(BuildContext context) {
-  return showDialog<bool>(
-    context: context,
-    builder: (context) {
-      return AlertDialog(
-        title: const Text('Log Out'),
-        content: const Text('Are you sure you want to log out?'),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop(false);
-            },
-            child: const Text('Cancel'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop(true);
-            },
-            child: const Text('Log Out'),
-          ),
-        ],
-      );
-    },
-  ).then((value) => value ?? false);
+  Future<bool> showLogOutDialog(BuildContext context) {
+    return showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Log Out'),
+          content: const Text('Are you sure you want to log out?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              },
+              child: const Text('Log Out'),
+            ),
+          ],
+        );
+      },
+    ).then((value) => value ?? false);
+  }
 }

@@ -51,15 +51,16 @@ class _HomePageState extends State<LoginView> {
             children: [
               //creating some distance from the top
               Flexible(
-                flex: 1,
-                child: Container(),
+                flex: 0,
+                child: Container(
+                    // alignment: Alignment.bottomRight,
+                    ),
               ),
 
               //app logo
               Image.asset(
-                'assets/K_Cash_logo.png',
-                color: Colors.black,
-                height: 24,
+                'assets/Time-Cash.png',
+                height: 35,
               ),
 
               const SizedBox(
