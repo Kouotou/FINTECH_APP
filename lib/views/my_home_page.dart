@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/constants/routes.dart';
 import 'package:learnflutter/enums/menu_action.dart';
-
-import 'dart:developer' as devtools show log;
-
 import 'package:learnflutter/services/auth/auth_service.dart';
+import 'package:learnflutter/views/invoice_veiw.dart';
+import 'package:learnflutter/views/notes_view.dart';
+import 'package:learnflutter/views/setting_view.dart';
+import 'package:learnflutter/views/support_view.dart';
+import 'dart:developer' as devtools show log;
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -14,7 +16,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<MyHomePage> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
+
+  final List<Widget> _widgetScreens = const <Widget>[
+    InvoiceView(),
+    NotesView(),
+    SettingsView(),
+    SupportView(),
+  ];
+  // int _currentIndex = 0;
   // late PageController _pageController;
 
   // @override
@@ -32,45 +42,190 @@ class _HomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-        actions: [
-          PopupMenuButton<MenuAction>(
-            onSelected: (value) async {
-              devtools.log(value.toString());
-              switch (value) {
-                case MenuAction.logout:
-                  final shouldLogout = await showLogOutDialog(context);
-                  devtools.log(shouldLogout.toString());
-                  if (shouldLogout) {
-                    await AuthService.firebase().logOut();
-                    // ignore: use_build_context_synchronously
-                    Navigator.of(context).pushNamedAndRemoveUntil(
-                      loginRoute,
-                      (_) => false,
-                    );
-                  }
-                  break;
-                case MenuAction.support:
-                  break;
-              }
-            },
-            itemBuilder: (context) {
-              return const [
-                PopupMenuItem<MenuAction>(
-                  value: MenuAction.logout,
-                  child: Text('Log Out'),
-                ),
-                PopupMenuItem<MenuAction>(
-                  value: MenuAction.support,
-                  child: Text('Support'),
-                ),
-              ];
-            },
-          ),
-        ],
-      ),
-      body: Container(),
+//       body: SingleChildScrollView(
+//         child: Column(
+//           children: [
+//             const SizedBox(height: 40),
+//             titleSection,
+//             boxSection,
+//             searchSection,
+//             iconSection,
+//             sendSection,
+//             lineSection,
+//             historySection,
+//             butttomSection,
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// Widget titleSection = Container(
+//   padding: const EdgeInsets.all(20),
+//   child: Row(
+//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//     children: [
+//       const Text(
+//         'Home Page',
+//         style: TextStyle(
+//           fontSize: 25,
+//           fontWeight: FontWeight.bold,
+//         ),
+//       ),
+//       SizedBox(
+//         height: 50,
+//         width: 50,
+//         child: ClipRRect(
+//           borderRadius: BorderRadius.circular(25),
+//           child: Image.asset(
+//             "assets/avat2.webp",
+//             height: 15,
+//           ),
+//           // Image.network('https://www.tutorialkart.com/img/hummingbird.png'),
+//         ),
+//       )
+//     ],
+//   ),
+// );
+
+// Widget boxSection = Container(
+//   width: double.infinity,
+//   padding: const EdgeInsets.all(25),
+//   margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+//   decoration: BoxDecoration(
+//     borderRadius: BorderRadius.circular(15),
+//     gradient: const LinearGradient(
+//       begin: Alignment.topCenter,
+//       end: Alignment.bottomCenter,
+//       colors: [
+//         Colors.greenAccent,
+//         Colors.green,
+//       ],
+//     ),
+//   ),
+//   child: Column(
+//     crossAxisAlignment: CrossAxisAlignment.start,
+//     children: [
+//       const Text(
+//         'Welcome to Time-Cash',
+//         style: TextStyle(
+//           color: Colors.white,
+//           fontSize: 25,
+//           fontWeight: FontWeight.bold,
+//         ),
+//       ),
+//       const SizedBox(height: 10),
+//       const Text(
+//         'Manage your Time. Manage your Cash.',
+//         style: TextStyle(
+//           color: Colors.white,
+//         ),
+//       ),
+//       const SizedBox(height: 10),
+//       Text(
+//         'No age, currency nor country restriction',
+//         style: TextStyle(
+//           color: Colors.grey[200],
+//           fontSize: 15,
+//           fontWeight: FontWeight.w200,
+//         ),
+//       ),
+//       const SizedBox(height: 10),
+//       TextButton(
+//         onPressed: () {},
+//         child: const Text(
+//           'Details',
+//           style: TextStyle(
+//             color: Colors.white,
+//             //backgroundColor: Colors.black,
+//           ),
+//         ),
+//       ),
+//     ],
+//   ),
+// );
+
+// Widget searchSection = Container(
+//   margin: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+//   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+//   decoration: BoxDecoration(
+//     color: Colors.grey[200],
+//     borderRadius: BorderRadius.circular(10),
+//   ),
+//   child: const Row(
+//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//     children: [
+//       Icon(
+//         Icons.search,
+//         color: Colors.grey,
+//       ),
+//       SizedBox(
+//         height: 10,
+//       ),
+//       Expanded(
+//         child: Text(
+//           'Search',
+//           style: TextStyle(color: Colors.grey),
+//         ),
+//       ),
+//       Icon(
+//         Icons.mic_none,
+//         color: Colors.grey,
+//       ),
+//     ],
+//   ),
+// );
+
+// Widget iconSection = Container(
+//   padding: const EdgeInsets.all(10),
+//   margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+//   child: Row(
+//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//     children: [
+//       Container(
+//         padding: const EdgeInsets.all(5),
+//         decoration: BoxDecoration(
+//           color: Colors.orange,
+//           borderRadius: BorderRadius.circular(5),
+//         ),
+//       )
+//     ],
+//   ),
+// );
+
+// Widget sendSection = Container(
+//   padding: const EdgeInsets.all(10),
+//   margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+//   child: Row(
+//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//     crossAxisAlignment: CrossAxisAlignment.center,
+//     children: [
+//       const SizedBox(height: 10),
+//       TextButton(
+//         onPressed: () {},
+//         child: const Text(
+//           'SEND',
+//           style: TextStyle(
+//             color: Colors.green,
+//             fontSize: 20,
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//       ),
+//       const Icon(
+//         Icons.telegram,
+//         color: Colors.green,
+//       ),
+//     ],
+//   ),
+// );
+
+// Widget lineSection = Container();
+// Widget historySection = Container();
+// Widget butttomSection = Container();
+
+      body: _widgetScreens.elementAt(_currentIndex),
       bottomNavigationBar: BottomNavigationBar(
         //to permit navigation
         currentIndex: _currentIndex,
@@ -78,27 +233,6 @@ class _HomePageState extends State<MyHomePage> {
           setState(
             () {
               _currentIndex = value;
-              if (_currentIndex == 0) {
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                  homePageRoute,
-                  (route) => false,
-                );
-              } else if (_currentIndex == 1) {
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                  invoiceRoute,
-                  (route) => false,
-                );
-              } else if (_currentIndex == 2) {
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                  settingsRoute,
-                  (route) => false,
-                );
-              } else {
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                  supportRoute,
-                  (route) => false,
-                );
-              }
             },
           );
         },
@@ -106,13 +240,13 @@ class _HomePageState extends State<MyHomePage> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.analytics),
+            label: 'Invoice',
             backgroundColor: Colors.green,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.analytics),
-            label: 'Invoice',
+            icon: Icon(Icons.home),
+            label: 'Home',
             backgroundColor: Colors.green,
           ),
           BottomNavigationBarItem(
@@ -128,34 +262,5 @@ class _HomePageState extends State<MyHomePage> {
         ],
       ),
     );
-    // body: if(nav = 0) {
-    //   return const buttomNavBarRoute
-    // },
-  }
-
-  Future<bool> showLogOutDialog(BuildContext context) {
-    return showDialog<bool>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Log Out'),
-          content: const Text('Are you sure you want to log out?'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(false);
-              },
-              child: const Text('Cancel'),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(true);
-              },
-              child: const Text('Log Out'),
-            ),
-          ],
-        );
-      },
-    ).then((value) => value ?? false);
   }
 }

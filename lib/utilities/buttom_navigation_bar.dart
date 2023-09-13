@@ -27,7 +27,7 @@ class _ButtomNavBarState extends State<ButtomNavBar> {
     super.dispose();
   }
 
-  final screens = const [
+  final List<Widget> _widgetScreens = const <Widget>[
     InvoiceView(),
     NotesView(),
     SettingsView(),
@@ -47,7 +47,7 @@ class _ButtomNavBarState extends State<ButtomNavBar> {
       //     }
       //   ),
       // )
-      body: screens[_currentIndex],
+      body: _widgetScreens.elementAt(_currentIndex),
       bottomNavigationBar: BottomNavigationBar(
         //to permit navigation
         currentIndex: _currentIndex,
