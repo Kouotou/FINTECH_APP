@@ -7,3 +7,4 @@ const invoiceRoute = '/invoice/';
 const supportRoute = '/support/';
 const buttomNavBarRoute = '/Buttom_nav_bar/';
 const homePageRoute = '/my_home_page/';
+const accountPageRoute = '/account/';

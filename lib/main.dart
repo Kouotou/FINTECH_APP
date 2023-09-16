@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/constants/routes.dart';
 import 'package:learnflutter/services/auth/auth_service.dart';
 import 'package:learnflutter/utilities/buttom_navigation_bar.dart';
+import 'package:learnflutter/views/account_view.dart';
 import 'package:learnflutter/views/invoice_veiw.dart';
 import 'package:learnflutter/views/login_view.dart';
 import 'package:learnflutter/views/notes_view.dart';
@@ -33,6 +34,7 @@ void main() {
         supportRoute: (context) => const SupportView(),
         buttomNavBarRoute: (context) => const ButtomNavBar(),
         homePageRoute: (context) => const MyHomePage(),
+        accountPageRoute: (context) => const AccountView(),
       },
       debugShowCheckedModeBanner: false,
     ),

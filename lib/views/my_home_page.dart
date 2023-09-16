@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/constants/routes.dart';
-import 'package:learnflutter/enums/menu_action.dart';
-import 'package:learnflutter/services/auth/auth_service.dart';
 import 'package:learnflutter/views/invoice_veiw.dart';
 import 'package:learnflutter/views/notes_view.dart';
 import 'package:learnflutter/views/setting_view.dart';
 import 'package:learnflutter/views/support_view.dart';
-import 'dart:developer' as devtools show log;
+// import 'dart:developer' as devtools show log;
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -24,24 +21,47 @@ class _HomePageState extends State<MyHomePage> {
     SettingsView(),
     SupportView(),
   ];
-  // int _currentIndex = 0;
-  // late PageController _pageController;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _pageController = PageController();
-  // }
-
-  // @override
-  // void dispose() {
-  //   _pageController.dispose();
-  //   super.dispose();
-  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: _widgetScreens.elementAt(_currentIndex),
+      bottomNavigationBar: BottomNavigationBar(
+        //to permit navigation
+        currentIndex: _currentIndex,
+        onTap: (value) {
+          setState(
+            () {
+              _currentIndex = value;
+            },
+          );
+        },
+
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.analytics),
+            label: 'Invoice',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.assistant),
+            label: 'Support',
+            backgroundColor: Colors.green,
+          ),
+        ],
+      ),
+
 //       body: SingleChildScrollView(
 //         child: Column(
 //           children: [
@@ -224,43 +244,6 @@ class _HomePageState extends State<MyHomePage> {
 // Widget lineSection = Container();
 // Widget historySection = Container();
 // Widget butttomSection = Container();
-
-      body: _widgetScreens.elementAt(_currentIndex),
-      bottomNavigationBar: BottomNavigationBar(
-        //to permit navigation
-        currentIndex: _currentIndex,
-        onTap: (value) {
-          setState(
-            () {
-              _currentIndex = value;
-            },
-          );
-        },
-
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.analytics),
-            label: 'Invoice',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.assistant),
-            label: 'Support',
-            backgroundColor: Colors.green,
-          ),
-        ],
-      ),
     );
   }
 }

@@ -60,6 +60,23 @@ class _NotesViewState extends State<NotesView> {
           ),
         ],
       ),
+      body: Container(
+        width: double.infinity,
+        height: 200,
+        padding: const EdgeInsets.all(25),
+        margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          gradient: const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.greenAccent,
+              Colors.green,
+            ],
+          ),
+        ),
+      ),
     );
   }
 
