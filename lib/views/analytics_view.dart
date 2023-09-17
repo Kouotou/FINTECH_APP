@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class SupportView extends StatefulWidget {
-  const SupportView({super.key});
+class AnalyticsView extends StatefulWidget {
+  const AnalyticsView({super.key});
 
   @override
-  State<SupportView> createState() => _SupportViewState();
+  State<AnalyticsView> createState() => _AnalyticsViewState();
 }
 
-class _SupportViewState extends State<SupportView> {
+class _AnalyticsViewState extends State<AnalyticsView> {
   // int _currentIndex = 3;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Support'),
+        title: const Text('Analytics'),
       ),
       // body: Container(),
       // bottomNavigationBar: BottomNavigationBar(

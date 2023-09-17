@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/views/invoice_veiw.dart';
 import 'package:learnflutter/views/notes_view.dart';
 import 'package:learnflutter/views/setting_view.dart';
-import 'package:learnflutter/views/support_view.dart';
+import 'package:learnflutter/views/analytics_view.dart';
 
 class ButtomNavBar extends StatefulWidget {
   const ButtomNavBar({super.key});
@@ -31,7 +31,7 @@ class _ButtomNavBarState extends State<ButtomNavBar> {
     InvoiceView(),
     NotesView(),
     SettingsView(),
-    SupportView(),
+    AnalyticsView(),
   ];
 
   @override

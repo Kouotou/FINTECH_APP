@@ -67,6 +67,8 @@ flutter:
   assets:
     - assets/time-cash_white.png
     - assets/avat2.webp
+    - assets/avat5.png
+    - assets/messi.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

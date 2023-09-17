@@ -9,9 +9,10 @@ import 'package:learnflutter/views/account_view.dart';
 import 'package:learnflutter/views/invoice_veiw.dart';
 import 'package:learnflutter/views/login_view.dart';
 import 'package:learnflutter/views/notes_view.dart';
+import 'package:learnflutter/views/notification_view.dart';
 import 'package:learnflutter/views/register_view.dart';
 import 'package:learnflutter/views/setting_view.dart';
-import 'package:learnflutter/views/support_view.dart';
+import 'package:learnflutter/views/analytics_view.dart';
 import 'package:learnflutter/views/verify_email_view.dart';
 import 'package:learnflutter/views/my_home_page.dart';
 
@@ -31,10 +32,11 @@ void main() {
         verifyEmailRoute: (context) => const VerifyEmailView(),
         settingsRoute: (context) => const SettingsView(),
         invoiceRoute: (context) => const InvoiceView(),
-        supportRoute: (context) => const SupportView(),
+        supportRoute: (context) => const AnalyticsView(),
         buttomNavBarRoute: (context) => const ButtomNavBar(),
         homePageRoute: (context) => const MyHomePage(),
         accountPageRoute: (context) => const AccountView(),
+        notifPageRoute: (context) => const NotificationView(),
       },
       debugShowCheckedModeBanner: false,
     ),

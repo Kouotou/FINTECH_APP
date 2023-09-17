@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/views/invoice_veiw.dart';
 import 'package:learnflutter/views/notes_view.dart';
 import 'package:learnflutter/views/setting_view.dart';
-import 'package:learnflutter/views/support_view.dart';
+import 'package:learnflutter/views/analytics_view.dart';
 // import 'dart:developer' as devtools show log;
 
 class MyHomePage extends StatefulWidget {
@@ -19,7 +19,7 @@ class _HomePageState extends State<MyHomePage> {
     InvoiceView(),
     NotesView(),
     SettingsView(),
-    SupportView(),
+    AnalyticsView(),
   ];
 
   @override
@@ -27,18 +27,9 @@ class _HomePageState extends State<MyHomePage> {
     return Scaffold(
       body: _widgetScreens.elementAt(_currentIndex),
       bottomNavigationBar: BottomNavigationBar(
-        //to permit navigation
-        currentIndex: _currentIndex,
-        onTap: (value) {
-          setState(
-            () {
-              _currentIndex = value;
-            },
-          );
-        },
-
         type: BottomNavigationBarType.fixed,
-        items: const [
+
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.analytics),
             label: 'Invoice',
@@ -55,11 +46,21 @@ class _HomePageState extends State<MyHomePage> {
             backgroundColor: Colors.green,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.assistant),
-            label: 'Support',
+            icon: Icon(Icons.manage_history_outlined),
+            label: 'Analytics',
             backgroundColor: Colors.green,
           ),
         ],
+
+        //to permit navigation
+        currentIndex: _currentIndex,
+        onTap: (value) {
+          setState(
+            () {
+              _currentIndex = value;
+            },
+          );
+        },
       ),
 
 //       body: SingleChildScrollView(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/services/auth/auth_service.dart';
+import 'package:learnflutter/widgets/profile.dart';
 import 'dart:developer' as devtools show log;
 
 import '../constants/routes.dart';
@@ -60,23 +61,7 @@ class _NotesViewState extends State<NotesView> {
           ),
         ],
       ),
-      body: Container(
-        width: double.infinity,
-        height: 200,
-        padding: const EdgeInsets.all(25),
-        margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          gradient: const LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.greenAccent,
-              Colors.green,
-            ],
-          ),
-        ),
-      ),
+      body: const Profile(),
     );
   }
 
@@ -86,7 +71,9 @@ class _NotesViewState extends State<NotesView> {
       builder: (context) {
         return AlertDialog(
           title: const Text('Log Out'),
-          content: const Text('Are you sure you want to log out?'),
+          content: const Text(
+            'Are you sure you want to log out?',
+          ),
           actions: [
             TextButton(
               onPressed: () {
