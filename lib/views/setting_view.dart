@@ -22,6 +22,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:learnflutter/constants/routes.dart';
+import 'package:learnflutter/utilities/colors.dart';
+import 'package:learnflutter/utilities/fonts.dart';
 
 class SettingsView extends StatefulWidget {
   const SettingsView({Key? key}) : super(key: key);
@@ -55,15 +57,15 @@ class _SettingViewState extends State<SettingsView> {
       // onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.white,
+        backgroundColor: mobileBackgroundColor,
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: iconColor,
           automaticallyImplyLeading: false,
           leading: IconButton(
             iconSize: 15,
             icon: const Icon(
               Icons.arrow_back_rounded,
-              color: Colors.white,
+              color: mobileBackgroundColor,
               size: 30,
             ),
             onPressed: () {
@@ -75,9 +77,7 @@ class _SettingViewState extends State<SettingsView> {
           ),
           title: const Text(
             'Settings',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+            style: primaryTextFont,
           ),
           actions: const [],
           centerTitle: false,
@@ -93,10 +93,7 @@ class _SettingViewState extends State<SettingsView> {
                 padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 16),
                 child: Text(
                   'Settings',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
+                  style: primaryTextFont,
                 ),
               ),
 
@@ -117,7 +114,7 @@ class _SettingViewState extends State<SettingsView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Padding(
@@ -127,7 +124,7 @@ class _SettingViewState extends State<SettingsView> {
                         children: [
                           Icon(
                             Icons.color_lens_outlined,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -135,7 +132,7 @@ class _SettingViewState extends State<SettingsView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Change Theme',
-                              style: TextStyle(fontSize: 15),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -143,7 +140,7 @@ class _SettingViewState extends State<SettingsView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
@@ -172,7 +169,7 @@ class _SettingViewState extends State<SettingsView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Padding(
@@ -182,7 +179,7 @@ class _SettingViewState extends State<SettingsView> {
                         children: [
                           Icon(
                             Icons.credit_card_outlined,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -190,7 +187,7 @@ class _SettingViewState extends State<SettingsView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Payment Methods',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -198,7 +195,7 @@ class _SettingViewState extends State<SettingsView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
@@ -223,7 +220,7 @@ class _SettingViewState extends State<SettingsView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Padding(
@@ -233,7 +230,7 @@ class _SettingViewState extends State<SettingsView> {
                         children: [
                           Icon(
                             Icons.notifications_none_outlined,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -241,7 +238,7 @@ class _SettingViewState extends State<SettingsView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Notification Settings',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -249,7 +246,7 @@ class _SettingViewState extends State<SettingsView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
@@ -274,7 +271,7 @@ class _SettingViewState extends State<SettingsView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Padding(
@@ -284,7 +281,7 @@ class _SettingViewState extends State<SettingsView> {
                         children: [
                           Icon(
                             Icons.language_outlined,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -292,7 +289,7 @@ class _SettingViewState extends State<SettingsView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Language',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -300,7 +297,7 @@ class _SettingViewState extends State<SettingsView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
@@ -325,7 +322,7 @@ class _SettingViewState extends State<SettingsView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Padding(
@@ -335,7 +332,7 @@ class _SettingViewState extends State<SettingsView> {
                         children: [
                           Icon(
                             Icons.security_outlined,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -343,7 +340,7 @@ class _SettingViewState extends State<SettingsView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Security',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -351,7 +348,7 @@ class _SettingViewState extends State<SettingsView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
@@ -376,7 +373,7 @@ class _SettingViewState extends State<SettingsView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Padding(
@@ -386,7 +383,7 @@ class _SettingViewState extends State<SettingsView> {
                         children: [
                           Icon(
                             Icons.help_outline_outlined,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -394,7 +391,7 @@ class _SettingViewState extends State<SettingsView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Help & Support',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -402,7 +399,7 @@ class _SettingViewState extends State<SettingsView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
@@ -427,7 +424,7 @@ class _SettingViewState extends State<SettingsView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Padding(
@@ -437,7 +434,7 @@ class _SettingViewState extends State<SettingsView> {
                         children: [
                           Icon(
                             Icons.info_outlined,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -445,7 +442,7 @@ class _SettingViewState extends State<SettingsView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'About',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -453,7 +450,7 @@ class _SettingViewState extends State<SettingsView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),

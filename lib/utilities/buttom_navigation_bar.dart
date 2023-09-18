@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/utilities/colors.dart';
 import 'package:learnflutter/views/invoice_veiw.dart';
 import 'package:learnflutter/views/notes_view.dart';
 import 'package:learnflutter/views/setting_view.dart';
@@ -64,22 +65,22 @@ class _ButtomNavBarState extends State<ButtomNavBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.analytics),
             label: 'Invoice',
-            backgroundColor: Colors.green,
+            backgroundColor: iconColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Colors.green,
+            backgroundColor: iconColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
-            backgroundColor: Colors.green,
+            backgroundColor: iconColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.assistant),
             label: 'Support',
-            backgroundColor: Colors.green,
+            backgroundColor: iconColor,
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/utilities/colors.dart';
 import 'package:learnflutter/views/invoice_veiw.dart';
 import 'package:learnflutter/views/notes_view.dart';
 import 'package:learnflutter/views/setting_view.dart';
@@ -33,22 +34,22 @@ class _HomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.analytics),
             label: 'Invoice',
-            backgroundColor: Colors.green,
+            backgroundColor: iconColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Colors.green,
+            backgroundColor: iconColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
-            backgroundColor: Colors.green,
+            backgroundColor: iconColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.manage_history_outlined),
             label: 'Analytics',
-            backgroundColor: Colors.green,
+            backgroundColor: iconColor,
           ),
         ],
 
@@ -120,8 +121,8 @@ class _HomePageState extends State<MyHomePage> {
 //       begin: Alignment.topCenter,
 //       end: Alignment.bottomCenter,
 //       colors: [
-//         Colors.greenAccent,
-//         Colors.green,
+//         appBarColor,
+//         iconColor,
 //       ],
 //     ),
 //   ),
@@ -131,7 +132,7 @@ class _HomePageState extends State<MyHomePage> {
 //       const Text(
 //         'Welcome to Time-Cash',
 //         style: TextStyle(
-//           color: Colors.white,
+//           color: mobileBackgroundColor,
 //           fontSize: 25,
 //           fontWeight: FontWeight.bold,
 //         ),
@@ -140,7 +141,7 @@ class _HomePageState extends State<MyHomePage> {
 //       const Text(
 //         'Manage your Time. Manage your Cash.',
 //         style: TextStyle(
-//           color: Colors.white,
+//           color: mobileBackgroundColor,
 //         ),
 //       ),
 //       const SizedBox(height: 10),
@@ -158,8 +159,8 @@ class _HomePageState extends State<MyHomePage> {
 //         child: const Text(
 //           'Details',
 //           style: TextStyle(
-//             color: Colors.white,
-//             //backgroundColor: Colors.black,
+//             color: mobileBackgroundColor,
+//             //backgroundColor: mainTextColor,
 //           ),
 //         ),
 //       ),
@@ -228,7 +229,7 @@ class _HomePageState extends State<MyHomePage> {
 //         child: const Text(
 //           'SEND',
 //           style: TextStyle(
-//             color: Colors.green,
+//             color: iconColor,
 //             fontSize: 20,
 //             fontWeight: FontWeight.bold,
 //           ),
@@ -236,7 +237,7 @@ class _HomePageState extends State<MyHomePage> {
 //       ),
 //       const Icon(
 //         Icons.telegram,
-//         color: Colors.green,
+//         color: iconColor,
 //       ),
 //     ],
 //   ),

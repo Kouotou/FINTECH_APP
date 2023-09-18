@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/constants/routes.dart';
 import 'package:learnflutter/services/auth/auth_service.dart';
 import 'package:learnflutter/utilities/buttom_navigation_bar.dart';
+import 'package:learnflutter/utilities/colors.dart';
 import 'package:learnflutter/views/account_view.dart';
 import 'package:learnflutter/views/invoice_veiw.dart';
 import 'package:learnflutter/views/login_view.dart';
@@ -20,9 +21,14 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
+      color: appBarColor,
+      theme: ThemeData.light().copyWith(
+        bottomNavigationBarTheme:
+            const BottomNavigationBarThemeData(selectedItemColor: appBarColor),
+        scaffoldBackgroundColor: mobileBackgroundColor,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: appBarColor,
+        ),
       ),
       home: const HomePage(),
       routes: {

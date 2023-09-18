@@ -1,6 +1,9 @@
+// import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:learnflutter/constants/routes.dart';
-import 'package:learnflutter/widgets/hover.dart';
+import 'package:learnflutter/utilities/colors.dart';
+import 'package:learnflutter/utilities/fonts.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -9,8 +12,8 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 150,
-      padding: const EdgeInsets.all(8),
+      height: 165,
+      padding: const EdgeInsets.all(6),
       margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
@@ -18,15 +21,16 @@ class Profile extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Colors.greenAccent,
-            Colors.green,
+            appBarColor,
+            iconColor,
           ],
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.fromLTRB(2, 0, 2, 2).copyWith(
+            padding: const EdgeInsets.fromLTRB(2, 0, 1, 1).copyWith(
               top: 0,
               right: 0,
             ),
@@ -38,10 +42,10 @@ class Profile extends StatelessWidget {
                   width: 72,
                   height: 72,
                   decoration: BoxDecoration(
-                    color: Colors.black,
+                    color: mainTextColor,
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: Colors.black,
+                      color: mainTextColor,
                       width: 2,
                     ),
                   ),
@@ -57,7 +61,7 @@ class Profile extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(
                       left: 8,
-                      bottom: 9,
+                      bottom: 5,
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -65,28 +69,19 @@ class Profile extends StatelessWidget {
                       children: [
                         SizedBox(
                           height: 65,
-                          child: HoverBuilder(
-                            builder: (isHovered) {
-                              return TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pushNamedAndRemoveUntil(
-                                    accountPageRoute,
-                                    (_) => false,
-                                  );
-                                },
-                                child: Text(
-                                  'KOUOTOU Ahmad Bilal',
-                                  style: TextStyle(
-                                    color:
-                                        isHovered ? Colors.white : Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 22,
-                                  ),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamedAndRemoveUntil(
+                                accountPageRoute,
+                                (_) => false,
                               );
                             },
+                            child: const Text(
+                              'KOUOTOU Ahmad Bilal',
+                              style: primaryTextFont,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -101,7 +96,7 @@ class Profile extends StatelessWidget {
                             child: const Text(
                               'Account Number',
                               style: TextStyle(
-                                color: Colors.black,
+                                color: mainTextColor,
                                 fontWeight: FontWeight.normal,
                                 fontSize: 15,
                               ),
@@ -112,19 +107,16 @@ class Profile extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(1),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                        notifPageRoute,
-                        (_) => false,
-                      );
-                    },
-                    icon: const Icon(
-                      Icons.notifications_active,
-                      size: 35,
-                    ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                      notifPageRoute,
+                      (_) => false,
+                    );
+                  },
+                  icon: const Icon(
+                    Icons.notifications,
+                    size: 35,
                   ),
                 ),
                 IconButton(
@@ -137,11 +129,37 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-          const Text(
-            "Location",
-            style: TextStyle(
-              decoration: TextDecoration.underline,
-            ),
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.location_pin),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  "Location",
+                  style: secondaryTextFont,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.account_balance_wallet_rounded),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "Balance",
+                    style: secondaryTextFont,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

@@ -54,22 +54,22 @@ class _AnalyticsViewState extends State<AnalyticsView> {
       //     BottomNavigationBarItem(
       //       icon: Icon(Icons.home),
       //       label: 'Home',
-      //       backgroundColor: Colors.green,
+      //       backgroundColor: iconColor,
       //     ),
       //     BottomNavigationBarItem(
       //       icon: Icon(Icons.analytics),
       //       label: 'Invoice',
-      //       backgroundColor: Colors.green,
+      //       backgroundColor: iconColor,
       //     ),
       //     BottomNavigationBarItem(
       //       icon: Icon(Icons.settings),
       //       label: 'Settings',
-      //       backgroundColor: Colors.green,
+      //       backgroundColor: iconColor,
       //     ),
       //     BottomNavigationBarItem(
       //       icon: Icon(Icons.assistant),
       //       label: 'Support',
-      //       backgroundColor: Colors.green,
+      //       backgroundColor: iconColor,
       //     ),
       //   ],
       // ),

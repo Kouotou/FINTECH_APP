@@ -5,6 +5,8 @@ import 'dart:developer' as devtools show log;
 import 'package:learnflutter/constants/routes.dart';
 import 'package:learnflutter/services/auth/auth_exceptions.dart';
 import 'package:learnflutter/services/auth/auth_service.dart';
+import 'package:learnflutter/utilities/colors.dart';
+import 'package:learnflutter/utilities/fonts.dart';
 import 'package:learnflutter/widgets/text_input_field.dart';
 
 import '../utilities/show_error_dialog.dart';
@@ -65,7 +67,7 @@ class _LoginViewState extends State<LoginView> {
 
                       //app logo
                       Image.asset(
-                        'assets/time-cash_white.png',
+                        'assets/time-cash_white.jpg',
                         height: 100,
                         // width: 1,
                       ),
@@ -148,16 +150,14 @@ class _LoginViewState extends State<LoginView> {
                               }
                             },
                             style: TextButton.styleFrom(
-                              backgroundColor:
-                                  const Color.fromRGBO(00, 190, 00, 1),
+                              backgroundColor: appBarColor,
                               // shape: BorderRadius.all(Radius.zero),
                             ),
                             child: const Text(
                               'Login',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: mobileBackgroundColor,
                               ),
-                              // style: TextStyle(color: Colors.black12),
                             ),
                           ),
                         ],
@@ -175,16 +175,14 @@ class _LoginViewState extends State<LoginView> {
                               padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                             ),
                             Text(
-                              "Not yet registered?",
+                              "Don't have a account?",
                               style: TextStyle(
-                                color: Colors.black,
+                                color: mainTextColor,
                               ),
                             ),
                             Text(
-                              "  Register here",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                              "  Create one",
+                              style: linkTextFont,
                             ),
                           ],
                         ),

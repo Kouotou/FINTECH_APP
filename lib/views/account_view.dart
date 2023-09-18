@@ -27,10 +27,12 @@
 //   }
 // }
 
-import 'dart:ui';
+// import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:learnflutter/constants/routes.dart';
+import 'package:learnflutter/utilities/colors.dart';
+import 'package:learnflutter/utilities/fonts.dart';
 
 class AccountView extends StatefulWidget {
   const AccountView({Key? key}) : super(key: key);
@@ -48,15 +50,15 @@ class _AccountViewState extends State<AccountView> {
       //onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.white,
+        backgroundColor: mobileBackgroundColor,
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: iconColor,
           automaticallyImplyLeading: false,
           leading: IconButton(
             iconSize: 15,
             icon: const Icon(
               Icons.arrow_back_rounded,
-              color: Colors.white,
+              color: mobileBackgroundColor,
               size: 30,
             ),
             onPressed: () {
@@ -68,15 +70,13 @@ class _AccountViewState extends State<AccountView> {
           ),
           title: const Text(
             'Profile',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
+            style: pageTextFont,
           ),
-          actions: const [],
-          centerTitle: false,
-          elevation: 0,
         ),
+        //   actions: const [],
+        //   centerTitle: false,
+        //   elevation: 0,
+
         body: SafeArea(
           top: true,
           child: Column(
@@ -92,7 +92,7 @@ class _AccountViewState extends State<AccountView> {
                     borderRadius: BorderRadius.all(
                       Radius.circular(12),
                     ),
-                    color: Colors.green,
+                    color: iconColor,
                   ),
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8),
@@ -100,13 +100,13 @@ class _AccountViewState extends State<AccountView> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 72,
+                          width: 75,
                           height: 72,
                           decoration: BoxDecoration(
-                            color: Colors.black,
+                            color: borderColor,
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: Colors.black,
+                              color: borderColor,
                               width: 2,
                             ),
                           ),
@@ -119,25 +119,28 @@ class _AccountViewState extends State<AccountView> {
                           ),
                         ),
                         const Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
                           child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
-                                child: Text(
-                                  'KOUOTOU Ahmad Bilal',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15),
+                              SizedBox(
+                                height: 30,
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 1, 0, 0),
+                                  child: Text(
+                                    'KOUOTOU Ahmad',
+                                    style: primaryTextFont,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
                               ),
                               Text(
                                 'bilalKouotou@timecash.com',
-                                style: TextStyle(fontWeight: FontWeight.normal),
+                                style: secondaryTextFont,
                               ),
                             ],
                           ),
@@ -153,7 +156,7 @@ class _AccountViewState extends State<AccountView> {
                 padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 0),
                 child: Text(
                   'Account',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                  style: primaryTextFont,
                 ),
               ),
 
@@ -170,7 +173,7 @@ class _AccountViewState extends State<AccountView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     alignment: const AlignmentDirectional(0.00, 0.00),
@@ -181,7 +184,7 @@ class _AccountViewState extends State<AccountView> {
                         children: [
                           Icon(
                             Icons.account_circle_outlined,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -189,7 +192,7 @@ class _AccountViewState extends State<AccountView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Edit Profile',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -197,7 +200,7 @@ class _AccountViewState extends State<AccountView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
@@ -222,7 +225,7 @@ class _AccountViewState extends State<AccountView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     alignment: const AlignmentDirectional(0.00, 0.00),
@@ -233,7 +236,7 @@ class _AccountViewState extends State<AccountView> {
                         children: [
                           Icon(
                             Icons.credit_card,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -241,7 +244,7 @@ class _AccountViewState extends State<AccountView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Payment Options',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -249,7 +252,7 @@ class _AccountViewState extends State<AccountView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
@@ -274,7 +277,7 @@ class _AccountViewState extends State<AccountView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     alignment: const AlignmentDirectional(0.00, 0.00),
@@ -285,7 +288,7 @@ class _AccountViewState extends State<AccountView> {
                         children: [
                           Icon(
                             Icons.account_box,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -293,7 +296,7 @@ class _AccountViewState extends State<AccountView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Change Account',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -301,7 +304,7 @@ class _AccountViewState extends State<AccountView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
@@ -321,7 +324,7 @@ class _AccountViewState extends State<AccountView> {
                 padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 0),
                 child: Text(
                   'Support',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                  style: primaryTextFont,
                 ),
               ),
 
@@ -338,7 +341,7 @@ class _AccountViewState extends State<AccountView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     alignment: const AlignmentDirectional(0.00, 0.00),
@@ -349,7 +352,7 @@ class _AccountViewState extends State<AccountView> {
                         children: [
                           Icon(
                             Icons.help_outline_rounded,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -357,7 +360,7 @@ class _AccountViewState extends State<AccountView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Contact Us',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -365,7 +368,7 @@ class _AccountViewState extends State<AccountView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
@@ -390,7 +393,7 @@ class _AccountViewState extends State<AccountView> {
                     width: double.infinity,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     alignment: const AlignmentDirectional(0.00, 0.00),
@@ -401,7 +404,7 @@ class _AccountViewState extends State<AccountView> {
                         children: [
                           Icon(
                             Icons.privacy_tip_rounded,
-                            color: Colors.green,
+                            color: iconColor,
                             size: 24,
                           ),
                           Padding(
@@ -409,7 +412,7 @@ class _AccountViewState extends State<AccountView> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Privacy Policy',
-                              style: TextStyle(fontWeight: FontWeight.normal),
+                              style: secondaryTextFont,
                             ),
                           ),
                           Expanded(
@@ -417,7 +420,7 @@ class _AccountViewState extends State<AccountView> {
                               alignment: AlignmentDirectional(0.90, 0.00),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.green,
+                                color: iconColor,
                                 size: 18,
                               ),
                             ),
