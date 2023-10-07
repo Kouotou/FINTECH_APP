@@ -57,7 +57,7 @@ class _SettingViewState extends State<SettingsView> {
       // onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: mobileBackgroundColor,
+        // backgroundColor: mobileBackgroundColor,
         appBar: AppBar(
           backgroundColor: iconColor,
           automaticallyImplyLeading: false,

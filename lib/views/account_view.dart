@@ -43,6 +43,9 @@ class AccountView extends StatefulWidget {
 
 class _AccountViewState extends State<AccountView> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  // get _defaultMaxRadius => () {
+  //       defaultMaxRadius = 15;
+  //     };
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +53,7 @@ class _AccountViewState extends State<AccountView> {
       //onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: mobileBackgroundColor,
+        // backgroundColor: mobileBackgroundColor,
         appBar: AppBar(
           backgroundColor: iconColor,
           automaticallyImplyLeading: false,
@@ -112,9 +115,12 @@ class _AccountViewState extends State<AccountView> {
                           ),
                           child: const Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
-                            child: CircleAvatar(
-                              backgroundImage: AssetImage("assets/messi.jpg"),
-                              radius: 40,
+                            child: Image(
+                              image: AssetImage(
+                                "assets/messi.jpg",
+                              ),
+                              // width: CircleAvatar._defaultMaxRadius,
+                              // radius: 40,
                             ),
                           ),
                         ),

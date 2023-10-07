@@ -20,11 +20,15 @@ class RegisterView extends StatefulWidget {
 class _RegisterViewState extends State<RegisterView> {
   late final TextEditingController _email;
   late final TextEditingController _password;
+  late final TextEditingController _lastname;
+  late final TextEditingController _firstname;
 
   @override
   void initState() {
     _email = TextEditingController();
     _password = TextEditingController();
+    _lastname = TextEditingController();
+    _firstname = TextEditingController();
     super.initState();
   }
 
@@ -32,6 +36,8 @@ class _RegisterViewState extends State<RegisterView> {
   void dispose() {
     _email.dispose();
     _password.dispose();
+    _lastname.dispose();
+    _firstname.dispose();
     super.dispose();
   }
 
@@ -71,6 +77,30 @@ class _RegisterViewState extends State<RegisterView> {
                     const SizedBox(
                       height: 64,
                     ),
+                    TextFieldInput(
+                      hintText: 'Enter your Last name',
+                      textInputType: TextInputType.text,
+                      textEditingController: _lastname,
+                      isEnableSuggestions: true,
+                      isAutoCorrect: false,
+                    ),
+
+                    const SizedBox(
+                      height: 35,
+                    ),
+
+                    TextFieldInput(
+                      hintText: 'Enter your First name',
+                      textInputType: TextInputType.text,
+                      textEditingController: _firstname,
+                      isEnableSuggestions: true,
+                      isAutoCorrect: false,
+                    ),
+
+                    const SizedBox(
+                      height: 35,
+                    ),
+
                     TextFieldInput(
                       hintText: 'Enter your email',
                       textInputType: TextInputType.emailAddress,
