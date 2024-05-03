@@ -1,2 +1,2 @@
-# experimental-learnFlutter
-Here  I am creatin a note book app with flutter following https://youtube.com/playlist?list=PL6yRaaP0WPkVtoeNIGqILtRAgd3h2CNpT
+# FINTECH APP
+Here  I am building a FINTECH app with Flutter for the MTN MoMo Hackathon with integration of the MoMo APIs
